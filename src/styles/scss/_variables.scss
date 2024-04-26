@@ -6,12 +6,16 @@ $minTablet: 48rem;
 $maxTablet: 62rem;
 $minLaptop: 70rem;
 
-$maxWidth: 1200;
+$maxWidth: 1600;
 
 //Fonts
-$mainFontFamily: "TT Hoves";
-$OpenSansFontFamily: "Open Sans";
-$fontSize: 12px;
+$mainFontFamily: "Inter";
+$sansFontFamily: "DM Sans";
+$fontSize: 18px;
 
 // Colors
-$mainColor: #000;
+$mainColor: #757575;
+$whiteColor: #fff;
+$headersColor: #0B4F6C;
+$darkGreyColor: #666666;
+$blueAccentColor: #01BAEF;

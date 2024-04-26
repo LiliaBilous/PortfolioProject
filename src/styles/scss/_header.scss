@@ -1,25 +1,84 @@
 .header {
+    min-height: 6rem;
+    display: flex;
+    align-items: center;
+    font-weight: 400;
     &__container {
+        display: flex;
+        flex-direction: row;
+        justify-content: space-between;
+        gap: 10rem;
     }
     &__menu {
+        
+    }
+    &__button {
+    }
+    &__social {
+    }
+    
+}
+.resume {
+    display: flex;
+    align-items: center;
+    padding: 0.5rem;
+    // border-bottom: 2px solid $mainColor;
+    @include transition(all 0.4s ease);
+    &:hover{
+        filter: invert(66%) sepia(82%) saturate(2792%) hue-rotate(152deg) brightness(92%) contrast(105%);
+    }
+    &__icon {
+        padding-left: 8px;
+        svg {
+            stroke: currentColor;
+            &:hover{
+                filter: invert(66%) sepia(82%) saturate(2792%) hue-rotate(152deg) brightness(92%) contrast(105%);
+            }
+        }
     }
     &__button {
     }
 }
-
 .menu {
+    display: flex;
+    align-items: center;
+    @include transition(all 0.4s ease);
     &__burger-icon {
     }
     &__body {
+        
     }
     &__list {
+        display: flex;
+        flex-direction: row;
+        gap: 2.5rem;
     }
     &__item {
     }
     &__link {
+        text-transform: capitalize;
+        letter-spacing: 1px;
+        
+        &:hover{
+            color: $blueAccentColor;
+        }
     }
 }
 
+.social {
+    display: flex;
+    gap: 1.875rem;
+    align-items: center;
+    
+    &__link {
+        &:hover{
+            filter: invert(66%) sepia(82%) saturate(2792%) hue-rotate(152deg) brightness(92%) contrast(105%);
+            @include transition(all 0.4s ease);
+        }
+    }
+}
 
-.resume-button {
+.github {
+}
+.linkedin {
 }
