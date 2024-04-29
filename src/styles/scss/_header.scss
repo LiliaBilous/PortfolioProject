@@ -1,19 +1,17 @@
 .header {
+    margin: 0;
+    &__container {
     min-height: 6rem;
     display: flex;
     align-items: center;
+    flex-direction: row;
+    justify-content: space-between;
     font-weight: 400;
-    &__container {
-        display: flex;
-        flex-direction: row;
-        justify-content: space-between;
-        gap: 10rem;
     }
+    
     &__menu {
-        
     }
-    &__button {
-    }
+    
     &__social {
     }
     
@@ -22,7 +20,6 @@
     display: flex;
     align-items: center;
     padding: 0.5rem;
-    // border-bottom: 2px solid $mainColor;
     @include transition(all 0.4s ease);
     &:hover{
         filter: invert(66%) sepia(82%) saturate(2792%) hue-rotate(152deg) brightness(92%) contrast(105%);
@@ -42,16 +39,47 @@
 .menu {
     display: flex;
     align-items: center;
+    position: relative;
     @include transition(all 0.4s ease);
     &__burger-icon {
+        display: none;
+        @media(max-width: $minTablet) {
+           display: block;
+           position: relative;
+           z-index: 5;
+           width: 1.75rem;
+            height: 1.5rem;
+           border: 2px solid transparent;
+           outline: none;
+        }        
     }
     &__body {
-        
+        position: relative;
+        z-index: 3;
+        @media(max-width: $minTablet) {
+            position: fixed;
+            top: 0;
+            right: -100%;
+            width: 65%;
+            height: 100%;
+            background-color: $headersColor;
+            padding-top: 5rem;
+            transition: all 0.5s ease;
+            &.active{
+                right: 0;
+            }
+        }
     }
     &__list {
         display: flex;
         flex-direction: row;
         gap: 2.5rem;
+        @media (max-width: $minTablet) {
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            justify-content: flex-start;
+        }
     }
     &__item {
     }
@@ -69,7 +97,8 @@
     display: flex;
     gap: 1.875rem;
     align-items: center;
-    
+    &__button {
+    }
     &__link {
         &:hover{
             filter: invert(66%) sepia(82%) saturate(2792%) hue-rotate(152deg) brightness(92%) contrast(105%);
@@ -81,4 +110,9 @@
 .github {
 }
 .linkedin {
+}
+.burger-line{
+    @media(max-width: $minTablet) {
+        @include hamburger-menu(28px, $mainColor, 2px, 9px)
+    }
 }

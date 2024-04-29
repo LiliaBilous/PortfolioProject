@@ -4,4 +4,50 @@
     -ms-transition: $transition;
     -webkit-transition: $transition;
     transition: $transition;
- }
+}
+
+@mixin hamburger-menu($width, $color, $height, $gutter) {
+    background-image: linear-gradient(to top, $color 0%, $color 100%, transparent 100%);
+    background-position: center center;
+    background-repeat: no-repeat;
+    background-size: 100% $height;
+    border: 0;
+    color: transparent;
+    cursor: pointer;
+    display: block;
+    font: #{0/0} a;
+    height: ($height * 3) + ($gutter * 2);
+    position: relative;
+    text-shadow: none;
+    transition: background-size .3s cubic-bezier(.64, .57, .67, 1.53);
+    user-select: none;
+    width: $width;
+    &:before,
+    &:after {
+        background-color: $color;
+        content: "";
+        height: $height;
+        left: 0;
+        position: absolute;
+        transform-origin: center center 0;
+        transform: translate3d(0, 0, 0) rotate3d(0, 0, 1, 0);
+        transition: transform .3s cubic-bezier(.64, .57, .67, 1.53);
+        width: 100%;
+    }
+    &:before {
+        top: 0;
+    }
+    &:after {
+        bottom: 0;
+    }
+    &.active {
+        background-size: 0 $height;
+        transition: background-size .3s cubic-bezier(.64, .57, .67, 1.53);
+        &::before {
+            transform: translate3d(0, (calc((($height * 3) + ($gutter * 2) - $height) / 2)), 0px) rotate3d(0, 0, 1, 45deg);
+        }
+        &::after {
+            transform: translate3d(0, -(calc((($height * 3) + ($gutter * 2) - $height) / 2)), 0px) rotate3d(0, 0, 1, -45deg);
+        }
+    }
+}
