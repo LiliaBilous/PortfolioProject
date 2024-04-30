@@ -3,7 +3,8 @@
 @import "./mixins";
 @import "./header";
 @import "./footer";
-@import "./page";
+@import "./home";
+@import "./common";
 
 
 @import url("https://fonts.googleapis.com/css?family=Inter:300,regular,500&display=swap");
@@ -16,7 +17,7 @@
     overflow: clip;
     main {
         flex-grow: 1;
-        padding-top: 7rem;
+        // padding-top: 7rem;
         @media (max-width: $minTablet) {
             padding-top: 4rem;
         }
