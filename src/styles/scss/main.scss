@@ -4,6 +4,7 @@
 @import "./header";
 @import "./footer";
 @import "./home";
+@import "./projects";
 @import "./common";
 
 
@@ -18,9 +19,9 @@
     main {
         flex-grow: 1;
         // padding-top: 7rem;
-        @media (max-width: $minTablet) {
-            padding-top: 4rem;
-        }
+        // @media (max-width: $minTablet) {
+        //     padding-top: 4rem;
+        // }
     }
 }
 [class*="__container"] {

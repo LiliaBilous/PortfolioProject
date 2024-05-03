@@ -2,8 +2,8 @@
 .title {
     &__label {
         position: relative;
-        font-weight: 300;
-        @include adaptive-font(20, 16);
+        font-weight: 500;
+        @include adaptive-font(12, 10);
         line-height: 1.2;
         letter-spacing: 7.5px;
         text-transform: uppercase;
@@ -13,7 +13,7 @@
         &::before{
             content: "";
             display: block;
-            height: 2px;
+            height: 1px;
             width: 1.5rem;
             background-color: $darkGreyColor;
 
@@ -21,7 +21,7 @@
     }
     &__value {
         font-weight: 700;
-        @include adaptive-font(54, 40);
+        @include adaptive-font(44, 36);
         line-height: 2;
         color: $headersColor;
     }

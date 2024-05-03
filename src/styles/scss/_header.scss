@@ -8,13 +8,10 @@
     justify-content: space-between;
     font-weight: 400;
     }
-    
     &__menu {
     }
-    
     &__social {
     }
-    
 }
 .resume {
     display: flex;
@@ -62,7 +59,8 @@
             right: -100%;
             width: 65%;
             height: 100%;
-            background-color: $headersColor;
+            background: $headersColor;
+            // background: linear-gradient(300deg, $greenAccentColor 0%, $blueAccentColor 90%);
             padding-top: 5rem;
             transition: all 0.5s ease;
             &.active{
@@ -90,6 +88,9 @@
         &:hover{
             color: $blueAccentColor;
         }
+        @media(max-width: $minTablet) {
+            color: $whiteColor;
+        }
     }
 }
 
@@ -113,6 +114,9 @@
 }
 .burger-line{
     @media(max-width: $minTablet) {
-        @include hamburger-menu(28px, $mainColor, 2px, 9px)
+        @include hamburger-menu(28px, $mainColor, 2px, 9px);
+        &.active{
+            color: $whiteColor;
+        }
     }
 }
