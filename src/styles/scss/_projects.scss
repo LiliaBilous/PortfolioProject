@@ -1,0 +1,87 @@
+.projects {
+    &__container {
+    }
+    &__header {
+    }
+    &__title {
+    }
+    &__controls {
+    }
+    &__swiper {
+        display: flex;
+        flex-direction: row;
+        gap: 16px;
+    }
+}
+.swiper__card {
+    height: 35.5rem;
+    border-radius: 1.25rem;
+}
+.item {
+    width: 33.3%;
+    background-color: $whiteColor;
+    display: flex;
+    flex-direction: column;
+    font-family: $sansFontFamily;
+    box-shadow: 0px 10px 15px 10px rgba(0,0,0,0.1);
+    &__image {
+        width: 100%;
+        height: 20rem;
+        img {
+            object-fit: cover;
+            width: 100%;
+            height: 100%;
+        }
+    }
+    &__body {
+        height: 65%;
+        margin: 1.75rem;
+        display: flex;
+        flex-direction: column;
+        justify-content: space-between;
+        align-items: flex-start;
+        gap: 1rem;
+    }
+    &__title {
+        font-weight: 400;
+        color: $headersColor;
+        @include adaptive-font(28, 20);
+        text-transform: uppercase;
+        text-align: center;
+    }
+    &__description {
+        text-align: justify;
+    }
+    &__stack {
+        @include adaptive-font(16, 12);
+        color: $blueAccentColor;
+        line-height: 1.65;
+    }
+    &__footer{
+        display: flex;
+        flex-direction: row;
+        justify-content: space-between;
+        width: 100%;
+   }
+}
+
+.link {
+    display: flex;
+    align-items: center;
+    &-icon{
+        
+    }
+    &__demo,
+    &__code {
+        text-decoration: underline;
+        padding-left: 0.5rem;
+    }
+}
+
+.projects__arrow {
+}
+.arrow-left {
+}
+.arrow-right {
+}
+
