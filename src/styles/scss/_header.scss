@@ -19,18 +19,11 @@
     padding: 0.5rem;
     @include transition(all 0.4s ease);
     &:hover{
-        filter: invert(66%) sepia(82%) saturate(2792%) hue-rotate(152deg) brightness(92%) contrast(105%);
+        filter: invert(82%) sepia(28%) saturate(6025%) hue-rotate(124deg) brightness(93%) contrast(93%);
     }
     &__icon {
         padding-right: 8px;
-        svg {
-            stroke: currentColor;
-            &:hover{
-                filter: invert(66%) sepia(82%) saturate(2792%) hue-rotate(152deg) brightness(92%) contrast(105%);
-            }
-        }
-    }
-    &__button {
+        stroke: currentColor;
     }
 }
 .menu {
@@ -102,7 +95,7 @@
     }
     &__link {
         &:hover{
-            filter: invert(66%) sepia(82%) saturate(2792%) hue-rotate(152deg) brightness(92%) contrast(105%);
+            filter: invert(82%) sepia(28%) saturate(6025%) hue-rotate(124deg) brightness(93%) contrast(93%);
             @include transition(all 0.4s ease);
         }
     }
