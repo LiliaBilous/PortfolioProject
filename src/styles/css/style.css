@@ -58,10 +58,12 @@ button {
   flex-direction: column;
   overflow: clip;
 }
+
 .wrapper main {
   flex-grow: 1;
   padding-top: 7rem;
 }
+
 @media (max-width: 48rem) {
   .wrapper main {
     padding-top: 4rem;

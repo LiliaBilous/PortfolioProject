@@ -1,0 +1,68 @@
+.tech-stack {
+    margin-bottom: 4.25rem;
+    &__container {
+    }
+    &__title {
+        
+    }
+    
+    &__grid-wrapper {
+        margin-top: 2rem;
+        display: grid;
+        grid-template-columns: repeat(auto-fill, minmax(4rem, 1fr));
+        row-gap: 1.875rem;
+        column-gap: 6.5rem;
+        @media(max-width: $maxTablet) {
+            column-gap: 4rem;
+        }
+        @media(max-width: $minTablet) {
+            column-gap: 2rem;
+        }
+        @media(max-width: $mobile) {
+            column-gap: 1rem;
+            row-gap: 1rem;
+        }
+        
+    }
+}
+
+.grid-item {
+    svg{
+        width: 6.5rem;
+        height: 6.5rem;
+        @media(max-width: $minTablet){
+            width: 4rem;
+            height: 4rem;
+        }
+    }
+    }
+    
+
+
+
+
+
+.thml-icon {
+}
+.css-icon {
+}
+.js-icon {
+}
+.vue-icon {
+}
+.vite-icon {
+}
+.webpack-icon {
+}
+.sass-icon {
+}
+.figma-icon {
+}
+.photoshop-icon {
+}
+.vscode-icon {
+}
+.git-icon {
+}
+.github-icon {
+}
