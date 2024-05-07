@@ -4,12 +4,10 @@
 @import "./header";
 @import "./footer";
 @import "./home";
+@import "./about";
 @import "./projects";
 @import "./tech-stack";
 @import "./common";
-
-
-
 
 @import url("https://fonts.googleapis.com/css?family=Inter:300,regular,500&display=swap");
 @import url("https://fonts.googleapis.com/css?family=DM+Sans:300,regular,500,800&display=swap");
@@ -38,5 +36,10 @@ body {
     color: $mainColor;
     background-color: $whiteColor;
     scroll-behavior: smooth;
+    @include transition(all 0.4s ease);
 }
 
+body.dark{
+    background-color: $darkGreyColor;
+    color: $whiteColor;
+}
