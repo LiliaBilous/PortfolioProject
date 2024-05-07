@@ -16,14 +16,27 @@
             height: 1px;
             width: 1.5rem;
             background-color: $darkGreyColor;
-
         }
     }
     &__value {
-        font-weight: 700;
-        @include adaptive-font(44, 36);
+        font-weight: 600;
+        @include adaptive-font(44, 30);
         line-height: 2;
         color: $headersColor;
+        margin-top: 1rem;
+        letter-spacing: .2rem;
+        @media(max-width: $minTablet){
+            line-height: 1.2;
+        }
+    }
+}
+.dark .title__label{
+    &::before{
+        background-color: $whiteColor;
     }
 }
 
+
+@import 'swiper/css';
+@import 'swiper/css/navigation';
+@import 'swiper/css/pagination';
