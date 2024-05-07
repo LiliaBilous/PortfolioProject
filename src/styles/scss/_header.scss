@@ -13,17 +13,13 @@
     &__social {
     }
 }
-.resume {
-    display: flex;
-    align-items: center;
-    padding: 0.5rem;
-    @include transition(all 0.4s ease);
-    &:hover{
-        filter: invert(82%) sepia(28%) saturate(6025%) hue-rotate(124deg) brightness(93%) contrast(93%);
-    }
-    &__icon {
-        padding-right: 8px;
-        stroke: currentColor;
+
+.burger-line{
+    @media(max-width: $minTablet) {
+        @include hamburger-menu(28px, $mainColor, 2px, 9px);
+        &.active{
+            color: $whiteColor;
+        }
     }
 }
 .menu {
@@ -87,29 +83,44 @@
     }
 }
 
-.social {
-    display: flex;
-    gap: 1.875rem;
-    align-items: center;
-    &__button {
-    }
-    &__link {
-        &:hover{
-            filter: invert(82%) sepia(28%) saturate(6025%) hue-rotate(124deg) brightness(93%) contrast(93%);
-            @include transition(all 0.4s ease);
-        }
-    }
+.toggle-label {
+	border-radius: 50px;
+	cursor: pointer;
+	display: flex;
+	align-items: center;
+	justify-content: space-between;
+	padding: 0 0.25rem;
+	position: relative;
+	height: 2rem;
+    width: 4rem;
+    box-shadow: inset 0px 0px 15px 3px rgba(0,0,0,0.1);
+	transform: scale(1.2);
 }
-
-.github {
+.toggle-label .ball {
+	background-color: $whiteColor;
+	border-radius: 50%;
+	position: absolute;
+	top: 0.25rem;
+	left: 0.25rem;
+	height: 1.5rem;
+	width: 1.5rem;
+	transform: translateX(0px);
+	transition: transform 0.2s linear;
 }
-.linkedin {
+.toggle-icon {
+    width: 1.5rem;
+    height: 1.5rem;
 }
-.burger-line{
-    @media(max-width: $minTablet) {
-        @include hamburger-menu(28px, $mainColor, 2px, 9px);
-        &.active{
-            color: $whiteColor;
-        }
-    }
+.sun {
+    background: url(../../assets/sun-svgrepo-com.svg) 0 0 / 100% no-repeat;
+}
+.moon {
+    background: url(../../assets/moon-svgrepo-com.svg) 0 0 / 100% no-repeat;
+}
+.checkbox {
+	opacity: 0;
+	position: absolute;
+}
+.checkbox:checked + .toggle-label .ball {
+	transform: translateX(2rem);
 }
