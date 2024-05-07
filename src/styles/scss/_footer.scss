@@ -1,0 +1,22 @@
+.footer {
+    padding: 2rem 0;
+    &__container {
+        display: flex;
+        flex-direction: row;
+        align-items: center;
+        justify-content: flex-start;
+        @media(max-width:$mobile){
+            flex-direction: column;
+        }
+    }
+    &__copyright {
+        padding: 1rem;
+    }
+    &__link {
+        color: $blueAccentColor;
+        font-weight: 500;
+    }
+    &__social {
+    }
+}
+
