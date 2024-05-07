@@ -1,4 +1,5 @@
 .projects {
+    margin-bottom: 4.25rem;
     &__container {
     }
     &__header {
@@ -15,35 +16,39 @@
         gap: 16px;
     }
     &__swiper {
-        display: flex;
-        flex-direction: row;
-        gap: 16px;
     }
 }
-.swiper__card {   
-    display: flex;
-    flex-direction: column;
-    justify-content: space-between;
-}
-.item {
-    height: 37rem;
-    width: 33.3%;
-    background-color: $whiteColor;
-    font-family: $sansFontFamily;
+
+.project-item {
+    width: auto;
+    min-height: 100%;
+    overflow: hidden;
+    border: 1px solid transparent;
     box-shadow: 0px 10px 15px 10px rgba(0,0,0,0.1);
     border-radius: 1.25rem;
+    background-color: $whiteColor;
+    font-family: $sansFontFamily;
     &__image {
+        overflow: hidden;
         width: 100%;
-        height: 24rem;
         display: flex;
         flex-direction: column;
         align-items: center;
+        @include transition(all 0.4s ease);
         img {
+            opacity: 0.8;
+            object-position: top;
             object-fit: cover;
             width: 100%;
-            height: 20.5rem;
-            border-top-left-radius: 1.25rem;;
-            border-top-right-radius: 1.25rem;;
+            height: 15rem;
+            &:hover{
+                @include transition(all 0.8s ease);
+                opacity: 1;
+                transform: scale(1.05);
+            }
+        }
+        &:hover{
+            opacity: 1;
         }
     }
     &__title {
@@ -52,16 +57,16 @@
         @include adaptive-font(28, 20);
         text-transform: uppercase;
         padding: 1rem 0 0 0;
+        z-index: 5;
     }
     &__body {
-        margin: 1rem 1.5rem 1.5rem 1.5rem;
+        padding: 1rem 1.5rem 1.5rem 1.5rem;
         display: flex;
         flex-direction: column;
         justify-content: space-between;
         align-items: flex-start;
         gap: 1rem;
     }
-    
     &__description {
         text-align: justify;
         line-height: 1.45
@@ -84,6 +89,7 @@
     align-items: center;
     gap: 0.5rem;
     text-decoration: underline;
+    color: $darkGreyColor;
     &:hover{
         @include transition(all 0.4s ease);
         color: $blueAccentColor;
@@ -104,11 +110,23 @@
     &:hover{
         background-color: rgba(14, 200, 225, 0.55);
     }
+    svg {
+        
+        filter: invert(20%) sepia(27%) saturate(2726%) hue-rotate(165deg) brightness(92%) contrast(96%);
+    }
 }
 .arrow-left {
-    fill: currentColor;
+    
 }
 .arrow-right {
     transform: rotate(180deg);
 }
+.swiper-button-disabled {
+    svg {
+        filter: brightness(0) invert(1);
+    }
+}
 
+.dark .project-item{
+    background-color: $mainColor;
+}
