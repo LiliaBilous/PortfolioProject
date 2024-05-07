@@ -1,5 +1,6 @@
 // Title components
 .title {
+    font-family: $mainFontFamily;
     &__label {
         position: relative;
         font-weight: 500;
@@ -19,12 +20,11 @@
         }
     }
     &__value {
-        font-weight: 600;
+        font-weight: 500;
         @include adaptive-font(44, 30);
         line-height: 2;
         color: $headersColor;
         margin-top: 1rem;
-        letter-spacing: .2rem;
         @media(max-width: $minTablet){
             line-height: 1.2;
         }

@@ -19,10 +19,6 @@
     overflow: clip;
     main {
         flex-grow: 1;
-        // padding-top: 7rem;
-        // @media (max-width: $minTablet) {
-        //     padding-top: 4rem;
-        // }
     }
 }
 [class*="__container"] {
@@ -31,7 +27,7 @@
     padding: 0 0.5rem;
 }
 body {
-    font-family: $mainFontFamily, sans-serif; 
+    font-family: $sansFontFamily, sans-serif; 
     font-size: $fontSize;
     color: $mainColor;
     background-color: $whiteColor;

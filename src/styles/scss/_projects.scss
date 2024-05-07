@@ -53,7 +53,7 @@
     }
     &__title {
         font-weight: 500;
-        color: $headersColor;
+        color: $blueAccentColor;
         @include adaptive-font(28, 20);
         text-transform: uppercase;
         padding: 1rem 0 0 0;
@@ -83,7 +83,9 @@
         width: 100%;
    }
 }
-
+.dark .project-item__description{
+    color: $darkGreyColor;
+}
 .link {
     display: flex;
     align-items: center;
@@ -102,13 +104,13 @@
 }
 
 .projects__arrow {
-    background-color: rgba(14, 200, 225, 0.25);
+    background-color: rgba(14, 200, 225, 0.5);
     border-radius: 0.5rem;
     padding: 0.5rem;
     display: flex;
     @include transition(all 0.4s ease);
     &:hover{
-        background-color: rgba(14, 200, 225, 0.55);
+        background-color: rgba(14, 200, 225, 0.75);
     }
     svg {
         
