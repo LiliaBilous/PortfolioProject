@@ -6,6 +6,7 @@ import { Navigation } from "swiper/modules";
 
 new Swiper(".projects__swiper", {
   modules: [Navigation],
+  watchOverflow: false,
   slidesPerView: 3,
   spaceBetween: 30,
   speed: 800,
