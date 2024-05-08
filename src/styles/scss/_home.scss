@@ -36,7 +36,7 @@
         }
     }
     &__main-title {
-        @include adaptive-font(100, 54);
+        @include adaptive-font(100, 42);
         text-transform: uppercase;
         font-weight: 400;
         line-height: 1.25;
@@ -70,11 +70,9 @@
     &__button {
     }
     &__link {
-        
         svg{
-            
             &:hover{
-                filter: invert(45%) sepia(51%) saturate(2365%) hue-rotate(156deg) brightness(95%) contrast(84%);
+                fill: $blueAccentColor;
                 @include transition(all 0.4s ease);
             }
         }

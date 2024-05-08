@@ -24,8 +24,8 @@
     min-height: 100%;
     overflow: hidden;
     border: 1px solid transparent;
-    box-shadow: 0px 10px 15px 10px rgba(0,0,0,0.1);
-    border-radius: 1.25rem;
+    box-shadow: 0px 5px 15px 5px rgba(0,0,0,0.1);
+    border-radius: 1rem;
     background-color: $whiteColor;
     font-family: $sansFontFamily;
     &__image {
@@ -97,8 +97,13 @@
         color: $blueAccentColor;
     }
     &-icon{
+        svg {
+            fill: currentColor;
+            width: 1.5rem;
+            height: 1.5rem;
+        }
         &:hover{
-            filter: invert(82%) sepia(28%) saturate(6025%) hue-rotate(124deg) brightness(93%) contrast(93%);
+           fill: $blueAccentColor;
         }
     }
 }
