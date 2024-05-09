@@ -1,5 +1,5 @@
 .about {
-    padding: 4.25rem 0;
+    margin-top: 6rem;
     @media(max-width: $minTablet){
         padding: 2.5rem 0;
     }
@@ -19,6 +19,7 @@
         }
     }
     &__text {
+        margin-top: 1rem;
         line-height: 2;
         @include adaptive-font(20, 18);
     }

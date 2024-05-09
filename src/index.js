@@ -1,6 +1,14 @@
 import "./styles/scss/main.scss";
 import "./app";
+import resume from "./assets/CV_BilousLiliia.pdf";
+const resumeButtons = document.getElementById("resume");
 
+resumeButtons.addEventListener("click", (event) => {
+  event.preventDefault();
+  window.open(resume);
+});
+
+// Swiper.js
 import Swiper from "swiper";
 import { Navigation } from "swiper/modules";
 

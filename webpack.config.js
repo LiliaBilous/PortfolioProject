@@ -21,6 +21,7 @@ module.exports = {
   output: {
     filename: "[name][contenthash].js",
     path: path.resolve(__dirname, "dist"),
+    assetModuleFilename: "assets/[name][ext]",
     clean: true,
   },
   module: {
@@ -42,6 +43,14 @@ module.exports = {
         test: /\.s[ac]ss$/i,
         use: ["style-loader", "css-loader", "sass-loader"],
       },
+      {
+        test: /\.(pdf)$/,
+        include: path.resolve(__dirname, "src"),
+        type: "asset/resource",
+        generator: {
+          filename: "assets/[name][ext]",
+        },
+      },
     ],
   },
   plugins: [
@@ -49,7 +58,7 @@ module.exports = {
       hash: true,
       title: "",
       filename: "index.html",
-      template: "./src/index.html",
+      template: path.resolve(__dirname, "index.html"),
       inject: "body",
     }),
     new CopyPlugin({

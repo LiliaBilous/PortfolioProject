@@ -1,5 +1,5 @@
 .projects {
-    margin-bottom: 4.25rem;
+    margin-top: 6rem;
     &__container {
     }
     &__header {
@@ -20,8 +20,8 @@
 }
 
 .project-item {
-    width: auto;
-    min-height: 100%;
+    width: 100%;
+    min-height: 36rem;
     overflow: hidden;
     border: 1px solid transparent;
     box-shadow: 0px 5px 15px 5px rgba(0,0,0,0.1);
@@ -99,8 +99,8 @@
     &-icon{
         svg {
             fill: currentColor;
-            width: 1.5rem;
-            height: 1.5rem;
+            width: 1rem;
+            height: 1rem;
         }
         &:hover{
            fill: $blueAccentColor;
