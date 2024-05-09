@@ -14,6 +14,7 @@ import { Navigation } from "swiper/modules";
 
 new Swiper(".projects__swiper", {
   modules: [Navigation],
+  loop: true,
   watchOverflow: false,
   slidesPerView: 3,
   spaceBetween: 30,
