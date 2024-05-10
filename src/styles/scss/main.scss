@@ -34,6 +34,7 @@ body {
     background-color: $whiteColor;
     scroll-behavior: smooth;
     @include transition(all 0.4s ease);
+    @include scrollbar(hsl(0deg 0% 0% / 15%), hsl(0deg 0% 0% / 25%),  hsl(0deg 0% 0% / 5%),  0.5rem, 0.25rem);
 }
 
 body.dark{

@@ -62,3 +62,36 @@
         font-size: calc(#{$mobSize + px} + #{$addSize} * (100vw / #{$maxWidth}));
     }
 }
+/// Custom scrollbar.
+/// @param {string} $thumb-background-color - The background color of the thumb.
+/// @param {string} $thumb-background-color-hover - The background color of the thumb when hovered.
+/// @param {string} $track-background-color - The background color of the track.
+/// @param {string} $size - The size of the scrollbar.
+/// @param {string} $border-radius - The border radius of the scrollbar.
+/// @return {mixin} - The scrollbar mixin.
+@mixin scrollbar(
+  $thumb-background-color,
+  $thumb-background-color-hover,
+  $track-background-color,
+  $size,
+  $border-radius
+) {
+  &::-webkit-scrollbar {
+    block-size: $size;
+    inline-size: $size;
+  }
+
+  &::-webkit-scrollbar-thumb {
+    background: $thumb-background-color;
+    border-radius: $border-radius;
+
+    &:hover {
+      background: $thumb-background-color-hover;
+    }
+  }
+
+  &::-webkit-scrollbar-track {
+    background: $track-background-color;
+    border-radius: $border-radius;
+  }
+}
