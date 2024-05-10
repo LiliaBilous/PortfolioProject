@@ -1,8 +1,11 @@
 .home {
     font-family: $mainFontFamily;
     margin-top: 6rem;
-    @media(max-width: $minTablet){
-        margin: 2.5rem 0;
+    @media(max-width: $maxTablet) {
+        margin-top: 4rem;
+    }
+    @media(max-width: $mobile) {
+        margin-top: 2rem;
     }
     &__container {
         display: flex;

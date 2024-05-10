@@ -20,7 +20,7 @@
         }
     }
     &__value {
-        font-weight: 500;
+        font-weight: 300;
         @include adaptive-font(44, 30);
         line-height: 2;
         color: $headersColor;

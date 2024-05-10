@@ -1,6 +1,12 @@
 .contacts {
     margin-top: 6rem;
     font-family: $mainFontFamily;
+    @media(max-width: $maxTablet) {
+        margin-top: 4rem;
+    }
+    @media(max-width: $mobile) {
+        margin-top: 3rem;
+    }
     &__container {
     }
     &__content {

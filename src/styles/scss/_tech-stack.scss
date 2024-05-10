@@ -1,5 +1,11 @@
 .tech-stack {
     margin-top: 6rem ;
+    @media(max-width: $maxTablet) {
+        margin-top: 4rem;
+    }
+    @media(max-width: $mobile) {
+        margin-top: 3rem;
+    }
     &__container {
     }
     &__title {

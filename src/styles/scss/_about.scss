@@ -1,7 +1,10 @@
 .about {
     margin-top: 6rem;
-    @media(max-width: $minTablet){
-        padding: 2.5rem 0;
+    @media(max-width: $maxTablet) {
+        margin-top: 4rem;
+    }
+    @media(max-width: $mobile) {
+        margin-top: 3rem;
     }
     &__container{
         
@@ -25,6 +28,7 @@
     }
 }
 
-.about-title{
- @include adaptive-font(64, 34);
+.about-title.title__value {
+    // @include adaptive-font(64, 34);
+    font-weight: 500;
 }
