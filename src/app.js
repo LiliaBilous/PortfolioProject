@@ -31,7 +31,7 @@ menuLinks.forEach((link) => {
       const goToSection = document.querySelector(targetElement.dataset.goto);
       if (goToSection) {
         window.scrollTo({
-          top: goToSection.offsetTop,
+          top: goToSection.offsetTop - 16,
           behavior: "smooth",
         });
       }
