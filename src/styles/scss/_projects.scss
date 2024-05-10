@@ -1,5 +1,11 @@
 .projects {
     margin-top: 6rem;
+    @media(max-width: $maxTablet) {
+        margin-top: 4rem;
+    }
+    @media(max-width: $mobile) {
+        margin-top: 3rem;
+    }
     &__container {
     }
     &__header {
@@ -24,7 +30,7 @@
 
 .project-item {
     width: 100%;
-    min-height: 100%;
+    // min-height: 100%;
     overflow: hidden;
     border: 1px solid transparent;
     box-shadow: 0px 5px 15px 5px rgba(0,0,0,0.1);
@@ -32,22 +38,23 @@
     background-color: $whiteColor;
     font-family: $sansFontFamily;
     &__image {  
-        overflow: hidden;
+        // overflow: hidden;
         width: 100%;
-        display: flex;
-        flex-direction: column;
-        align-items: center;
+        height: 200px;
         @include transition(all 0.4s ease);
         img {
             opacity: 0.8;
             object-position: top;
             object-fit: cover;
             width: 100%;
-            height: 15rem;
+            height: 100%;
             &:hover{
                 @include transition(all 0.8s ease);
                 opacity: 1;
                 transform: scale(1.05);
+            }
+            @media(max-width: $maxMobile){
+                height: 10rem;
             }
         }
         &:hover{
@@ -64,28 +71,34 @@
     }
     &__body {
         flex: 1 1 auto;
-        padding: 1.5rem;
+        padding: 0 1rem;
         display: flex;
         flex-direction: column;
-        justify-content: space-between;
-        align-items: flex-start;
-        gap: 1rem;
+        
     }
     &__description {
         text-align: justify;
-        line-height: 1.45
+        line-height: 1.45;
+        @include adaptive-font(18, 14);
+        padding-top: 1rem
     }
     &__stack {
         @include adaptive-font(16, 12);
         color: $headersColor;
         line-height: 1.65;
+        padding-top: 1rem;
     }
     &__footer{
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+   }
+   &__links{
         display: flex;
         flex-direction: row;
         justify-content: space-between;
         width: 100%;
-        padding: 0 1rem 1.5rem 1rem;
+        padding: 1rem;
    }
 }
 
@@ -146,5 +159,5 @@
 .swiper-slide.project-item {
     display: flex;
     flex-direction: column;
-    height: 100vh;
+    height: auto;
 }
