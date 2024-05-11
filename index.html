@@ -10,32 +10,48 @@
     <div class="wrapper">
       <header class="header">
         <div class="header__container">
-          <div class="header__menu menu">
-            <button class="menu__burger-icon">
+          <div class="header__menu menu" tabindex="0">
+            <button class="menu__burger-icon" tabindex="-1">
               <span class="burger-line"></span>
             </button>
             <nav class="menu__body">
               <ul class="menu__list">
                 <li class="menu__item">
-                  <a data-goto=".home" class="menu__link">Home</a>
+                  <a href="#home" data-goto=".home" class="menu__link">Home</a>
                 </li>
                 <li class="menu__item">
-                  <a data-goto=".about" class="menu__link">About</a>
+                  <a href="#about" data-goto=".about" class="menu__link"
+                    >About</a
+                  >
                 </li>
                 <li class="menu__item">
-                  <a data-goto=".tech-stack" class="menu__link">Technologies</a>
+                  <a
+                    href="#tech-stack"
+                    data-goto=".tech-stack"
+                    class="menu__link"
+                    >Technologies</a
+                  >
                 </li>
                 <li class="menu__item">
-                  <a data-goto=".projects" class="menu__link">Projects</a>
+                  <a href="#projects" data-goto=".projects" class="menu__link"
+                    >Projects</a
+                  >
                 </li>
                 <li class="menu__item">
-                  <a data-goto=".contacts" class="menu__link">Contact</a>
+                  <a href="#contacts" data-goto=".contacts" class="menu__link"
+                    >Contact</a
+                  >
                 </li>
               </ul>
             </nav>
           </div>
-          <div class="header__theme-toggle">
-            <input type="checkbox" class="checkbox" id="checkbox" />
+          <div class="header__theme-toggle" tabindex="0">
+            <input
+              tabindex="0"
+              type="checkbox"
+              class="checkbox"
+              id="checkbox"
+            />
             <label class="toggle-label" for="checkbox">
               <div class="toggle-icon sun"></div>
               <div class="toggle-icon moon"></div>

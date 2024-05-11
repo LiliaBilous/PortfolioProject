@@ -9,12 +9,31 @@
     font-weight: 400;
     }
     &__menu {
+        outline: none;
+        @media(max-width: $minTablet){
+            border: 1px solid transparent;
+            padding: 0.5rem;
+            border-radius: 0.5rem;
+            &:focus-visible{
+                border: 1px solid currentColor;
+            }
+        }
+        
     }
     &__social {
     }
+    &__theme-toggle{
+        border: 1px solid transparent;
+        border-radius: 50px;
+        padding: 0.25rem;
+        &:focus-visible{
+            outline: none;
+            border: 1px solid currentColor;  
+        }
+    }
 }
 
-.burger-line{
+.burger-line {
     @media(max-width: $minTablet) {
         @include hamburger-menu(28px, $mainColor, 2px, 9px);
         &.active{
@@ -34,9 +53,8 @@
            position: relative;
            z-index: 5;
            width: 1.75rem;
-            height: 1.5rem;
-           border: 2px solid transparent;
-           outline: none;
+           height: 1.5rem;
+           
         }        
     }
     &__body {
@@ -68,11 +86,18 @@
         }
     }
     &__item {
+        
     }
     &__link {
         text-transform: capitalize;
         letter-spacing: 1px;
-        cursor: pointer;
+        border: 1px solid transparent;
+        padding: 1rem;
+        border-radius: 1rem;
+        &:focus-visible{
+            outline: none;
+            border: 1px solid currentColor;
+        }
         &:hover{
             color: $blueAccentColor;
         }
