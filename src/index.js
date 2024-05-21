@@ -1,5 +1,6 @@
 import "./styles/scss/main.scss";
 import "./app";
+
 import resume from "./assets/CV_BilousLiliia.pdf";
 const resumeButtons = document.getElementById("resume");
 
