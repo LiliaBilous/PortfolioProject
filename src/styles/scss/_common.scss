@@ -1,3 +1,7 @@
+@import 'swiper/css';
+@import 'swiper/css/navigation';
+@import 'swiper/css/pagination';
+
 // Title components
 .title {
     font-family: $mainFontFamily;
@@ -35,9 +39,3 @@
         background-color: $whiteColor;
     }
 }
-
-@import "animate.css";
-
-@import 'swiper/css';
-@import 'swiper/css/navigation';
-@import 'swiper/css/pagination';
