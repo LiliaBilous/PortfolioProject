@@ -1,6 +1,11 @@
 import "./styles/scss/main.scss";
 import "./app";
 
+// Animate On Scroll Library
+import AOS from 'aos';
+AOS.init();
+
+// Resume button for pdf 
 import resume from "./assets/CV_BilousLiliia.pdf";
 const resumeButtons = document.getElementById("resume");
 
@@ -25,8 +30,8 @@ new Swiper(".projects__swiper", {
     prevEl: ".arrow-left",
   },
   breakpoints: {
-    // when window width is >= 320px
-    320: {
+    // when window width is >= 280px
+    280: {
       slidesPerView: 1,
       spaceBetween: 20,
     },
