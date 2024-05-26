@@ -122,13 +122,13 @@
 }
 
 .projects__arrow {
-    background-color: rgba(14, 200, 225, 0.5);
+    background-color: rgba(17, 223, 250, 0.75);
     border-radius: 0.5rem;
     padding: 0.5rem;
     display: flex;
     @include transition(all 0.4s ease);
     &:hover{
-        background-color: rgba(14, 200, 225, 0.75);
+        background-color: rgba(13, 185, 207, 0.75);
     }
     svg {        
         filter: invert(20%) sepia(27%) saturate(2726%) hue-rotate(165deg) brightness(92%) contrast(96%);

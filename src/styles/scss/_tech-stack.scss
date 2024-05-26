@@ -13,22 +13,20 @@
     }
     
     &__grid-wrapper {
-        margin-top: 2rem;
+        padding: 2rem 0 1rem 0;
         display: grid;
-        grid-template-columns: repeat(auto-fill, minmax(4rem, 1fr));
+        grid-template-columns: repeat(auto-fill, minmax(4rem, 7.5rem));
         row-gap: 1.875rem;
-        column-gap: 6.5rem;
+        column-gap: 3rem;
+        justify-content: space-between;
+        justify-items: center;
         @media(max-width: $maxTablet) {
             column-gap: 4rem;
         }
         @media(max-width: $minTablet) {
-            column-gap: 2rem;
-        }
-        @media(max-width: $mobile) {
             column-gap: 1rem;
             row-gap: 1rem;
-        }
-        
+        }        
     }
 }
 

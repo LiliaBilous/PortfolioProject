@@ -1,11 +1,14 @@
+// Swiper styles
 @import 'swiper/css';
 @import 'swiper/css/navigation';
 @import 'swiper/css/pagination';
+// Animation library styles
+@import 'aos/dist/aos.css';
 
 // Title components
 .title {
-    font-family: $mainFontFamily;
     &__label {
+        font-family: $mainFontFamily;
         position: relative;
         font-weight: 500;
         @include adaptive-font(12, 10);
