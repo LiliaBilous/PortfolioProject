@@ -21,7 +21,7 @@ module.exports = {
   output: {
     filename: "[name][contenthash].js",
     path: path.resolve(__dirname, "dist"),
-    assetModuleFilename: "assets/[name][ext]",
+    assetModuleFilename: path.join('assets', '[name].[contenthash][ext]'),
     clean: true,
   },
   module: {
@@ -32,12 +32,8 @@ module.exports = {
         use: ["babel-loader"],
       },
       {
-        test: /\.(?:ico|gif|svg|png|jpg|jpeg)$/i,
+        test: /\.(png|svg|jpg|jpeg|avif)$/i,
         type: "asset/resource",
-      },
-      {
-        test: /\.(woff(2)?|eot|ttf|otf|)$/,
-        type: "asset/inline",
       },
       {
         test: /\.s[ac]ss$/i,
@@ -47,9 +43,6 @@ module.exports = {
         test: /\.(pdf)$/,
         include: path.resolve(__dirname, "src"),
         type: "asset/resource",
-        generator: {
-          filename: "assets/[name][ext]",
-        },
       },
     ],
   },
@@ -65,7 +58,7 @@ module.exports = {
       patterns: [
         {
           from: path.resolve(__dirname, "./src/assets"),
-          to: path.resolve(__dirname, "./dist/assets"),
+          to: path.resolve(__dirname, "./dist/assets/[name].[contenthash][ext]"),
         },
       ],
     }),
