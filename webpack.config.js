@@ -32,10 +32,6 @@ module.exports = {
         exclude: /node_modules/,
         use: ["babel-loader"],
       },
-      // {
-      //   test: /\.(woff(2)?|eot|ttf|otf|)$/,
-      //   type: "asset/inline",
-      // },
       {
         test: /\.(png|svg|jpg|jpeg|avif)$/i,
         type: "asset/resource",
