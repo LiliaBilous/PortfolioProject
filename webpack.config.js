@@ -2,6 +2,7 @@ const path = require("path");
 const HtmlWebpackPlugin = require("html-webpack-plugin");
 const CopyPlugin = require("copy-webpack-plugin");
 const { CleanWebpackPlugin } = require("clean-webpack-plugin");
+const WebpackAssetsManifest = require("webpack-assets-manifest");
 
 module.exports = {
   mode: "development",
@@ -31,6 +32,10 @@ module.exports = {
         exclude: /node_modules/,
         use: ["babel-loader"],
       },
+      // {
+      //   test: /\.(woff(2)?|eot|ttf|otf|)$/,
+      //   type: "asset/inline",
+      // },
       {
         test: /\.(png|svg|jpg|jpeg|avif)$/i,
         type: "asset/resource",
@@ -49,10 +54,10 @@ module.exports = {
   plugins: [
     new HtmlWebpackPlugin({
       hash: true,
-      title: "",
+      cache: true,
       filename: "index.html",
       template: path.resolve(__dirname, "index.html"),
-      inject: "body",
+      title: "LiliiaBilous Portfolio",
     }),
     new CopyPlugin({
       patterns: [
@@ -63,5 +68,10 @@ module.exports = {
       ],
     }),
     new CleanWebpackPlugin(),
+    new WebpackAssetsManifest({
+      output: 'asset-manifest.json',
+      publicPath: true,
+      writeToDisk: true,
+    }),
   ],
 };

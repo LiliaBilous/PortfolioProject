@@ -10,7 +10,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0" >
     <link href="https://fonts.googleapis.com/css?family=Inter:300,regular,500,900&display=swap" rel="stylesheet">
     <link href="https://fonts.googleapis.com/css?family=DM+Sans:300,regular,500,900&display=swap" rel="stylesheet">
-    <title>LiliiaBilous Portfolio</title>
+    <title><%= htmlWebpackPlugin.options.title %></title>
   </head>
   <body>
     <div class="wrapper">
@@ -141,7 +141,7 @@
             </div>
             <div class="home__photo-wrapper">
               <div class="home__image">
-                <img src="assets/main.avif" alt="main-image" width="400px" height="300px">
+                <img src="<%= require('./src/assets/main.avif') %>" alt="main-image" width="400px" height="300px">
               </div>
             </div>
           </div>
@@ -552,7 +552,7 @@
                     href="https://liliabilous.github.io/TOPCAFES/"
                     class="project-item__image"
                   >
-                    <img src="assets/project1.avif" alt="project1" height="200px" width="370px">
+                    <img src="<%= require('./src/assets/project1.avif') %>" alt="project1" height="200px" width="370px">
                   </a>
                   <div class="project-item__body">
                     <h3 class="project-item__title">Top cafes ukraine</h3>
@@ -627,7 +627,7 @@
                     href="https://liliabilous.github.io/TEST__JuniorFE/"
                     class="project-item__image"
                   >
-                    <img src="assets/project3.avif" alt="project1" height="200px" width="370px">
+                    <img src="<%= require('./src/assets/project3.avif') %>" alt="project1" height="200px" width="370px">
                   </a>
                   <div class="project-item__body">
                     <h3 class="project-item__title">Landing page</h3>
@@ -698,7 +698,7 @@
                 </article>
                 <article class="swiper-slide project-item">
                   <a href="#" class="project-item__image">
-                    <img src="assets/project2.avif" alt="project1" height="200px" width="370px">
+                    <img src="<%= require('./src/assets/project2.avif') %>" alt="project1" height="200px" width="370px">
                   </a>
                   <div class="project-item__body">
                     <h3 class="project-item__title">Portfolio Project</h3>
@@ -765,7 +765,7 @@
                 </article>
                 <article class="swiper-slide project-item">
                   <a href="#" class="project-item__image">
-                    <img src="assets/project4.avif" alt="next project" height="200px" width="370px">
+                    <img src="<%= require('./src/assets/project4.avif') %>" alt="next project" height="200px" width="370px">
                   </a>
                   <div class="project-item__body">
                     <h3 class="project-item__title">Next project</h3>
