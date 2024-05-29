@@ -72,8 +72,22 @@
     align-items: center;
     &__button {
         cursor: pointer;
+        border: 1px solid transparent;
+        padding: 0.5rem;
+        border-radius: 0.5rem;
+        outline: none;
+        &:focus-visible{
+            border: 1px solid currentColor;
+        }
     }
     &__link {
+        border: 1px solid transparent;
+        padding: 0.5rem;
+        border-radius: 0.5rem;
+        outline: none;
+        &:focus-visible{
+            border: 1px solid currentColor;
+        }
         svg{
             &:hover{
                 fill: $blueAccentColor;
@@ -109,6 +123,5 @@
     fill: currentColor;
     &:hover{
         fill: $blueAccentColor;
-        // filter: invert(45%) sepia(51%) saturate(2365%) hue-rotate(156deg) brightness(95%) contrast(84%);
     }
 }

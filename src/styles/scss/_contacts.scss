@@ -36,7 +36,12 @@
     justify-content: space-between;
     align-items: center;
     padding: 1rem;
-    &:hover{
+    border: 1px solid transparent;
+    border-radius: 0.5rem;
+    outline: none;
+    &:hover,
+    &:focus-visible{
+        border: 1px solid currentColor;
         color: $blueAccentColor;
         @include transition(all 0.4s ease)
     }
