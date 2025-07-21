@@ -9,3 +9,15 @@
 - **JavaScript**: Реалізація інтерактивних елементів.
 - **Webpack**: Налаштування збірки проекту для оптимізації ресурсів та підтримки роботи з сучасними модулями.
 - **AOS Animation**: Інтеграція бібліотеки для анімації елементів при прокручуванні сторінки, що підвищує візуальний ефект.
+
+//DEPLOY
+# У гілці main
+npm run build
+
+# Скопіювати dist в тимчасовий коміт для гілки dist
+git checkout demo
+git rm -r . 
+cp -r dist/* ./
+git add .
+git commit -m "Deploy new build"
+git push origin demo
