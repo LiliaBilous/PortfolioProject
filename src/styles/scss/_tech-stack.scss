@@ -30,17 +30,6 @@
     }
 }
 
-// .grid-item {
-//     svg~use{
-//         width: 6.5rem;
-//         height: 6.5rem;
-//         @media(max-width: $minTablet){
-//             width: 4rem;
-//             height: 4rem;
-//         }
-//     }
-// }
-
 .grid-item {
   width: 120px;
   height: 120px;
@@ -52,31 +41,6 @@
     width: 100px;
     height: 100px;
     display: block;
-    // margin: 0 auto;
+    margin: 0 auto;
   }
-}
-
-.thml-icon {
-}
-.css-icon {
-}
-.js-icon {
-}
-.vue-icon {
-}
-.vite-icon {
-}
-.webpack-icon {
-}
-.sass-icon {
-}
-.figma-icon {
-}
-.photoshop-icon {
-}
-.vscode-icon {
-}
-.git-icon {
-}
-.github-icon {
 }
