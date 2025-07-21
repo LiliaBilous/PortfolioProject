@@ -58,8 +58,15 @@ module.exports = {
     new CopyPlugin({
       patterns: [
         {
+          from: path.resolve(__dirname, "./src/assets/tech-stack-sprite.svg"),
+          to: path.resolve(__dirname, "./dist/assets/tech-stack-sprite.svg"),
+        },
+        {
           from: path.resolve(__dirname, "./src/assets"),
           to: path.resolve(__dirname, "./dist/assets/[name].[contenthash][ext]"),
+          globOptions: {
+            ignore: ["**/tech-stack-sprite.svg"],
+          },
         },
       ],
     }),
