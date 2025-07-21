@@ -30,21 +30,31 @@
     }
 }
 
+// .grid-item {
+//     svg~use{
+//         width: 6.5rem;
+//         height: 6.5rem;
+//         @media(max-width: $minTablet){
+//             width: 4rem;
+//             height: 4rem;
+//         }
+//     }
+// }
+
 .grid-item {
-    svg{
-        width: 6.5rem;
-        height: 6.5rem;
-        @media(max-width: $minTablet){
-            width: 4rem;
-            height: 4rem;
-        }
-    }
-    }
-    
+  width: 120px;
+  height: 120px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
 
-
-
-
+  svg {
+    width: 100px;
+    height: 100px;
+    display: block;
+    // margin: 0 auto;
+  }
+}
 
 .thml-icon {
 }
