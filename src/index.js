@@ -1,8 +1,14 @@
 import "./styles/scss/main.scss";
+
+import 'swiper/css';
+import 'swiper/css/navigation';
+import 'swiper/css/pagination';
+
 import "./app";
 
 // Animate On Scroll Library
 import AOS from 'aos';
+import 'aos/dist/aos.css';
 AOS.init();
 
 // Resume button for pdf 

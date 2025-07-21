@@ -3,6 +3,7 @@ const HtmlWebpackPlugin = require('html-webpack-plugin');
 const CopyPlugin = require('copy-webpack-plugin');
 const { CleanWebpackPlugin } = require('clean-webpack-plugin');
 const WebpackAssetsManifest = require('webpack-assets-manifest');
+const MiniCssExtractPlugin = require('mini-css-extract-plugin');
 
 module.exports = {
     entry: {
@@ -25,19 +26,51 @@ module.exports = {
                 test: /\.svg$/,
                 exclude: /sprite\.svg$/,
                 type: 'asset/resource',
+                generator: {
+                    filename: 'assets/dev-icons/[name].[contenthash][ext]',
+                },
             },
             {
                 test: /\.(png|jpe?g|gif|webp|avif)$/i,
                 type: 'asset/resource',
-            },
-            {
-                test: /\.s[ac]ss$/i,
-                use: ['style-loader', 'css-loader', 'sass-loader'],
+                generator: {
+                    filename: 'assets/images/[name].[contenthash][ext]',
+                },
             },
             {
                 test: /\.pdf$/,
                 include: path.resolve(__dirname, '../src'),
                 type: 'asset/resource',
+                generator: {
+                    filename: 'assets/[name].[contenthash][ext]',
+                },
+            },
+            {
+                test: /\.s[ac]ss$/i,
+                use: [
+                    MiniCssExtractPlugin.loader,
+                    'css-loader',
+                    {
+                        loader: 'sass-loader',
+                        options: {
+                            implementation: require('sass'),
+                        },
+                    },
+                ],
+            },
+            {
+                test: /\.css$/i,
+                use: [
+                    MiniCssExtractPlugin.loader,
+                    'css-loader',
+                ],
+            },
+            {
+                test: /\.(woff|woff2|eot|ttf|otf)$/i,
+                type: 'asset/resource',
+                generator: {
+                    filename: 'assets/fonts/[name].[contenthash][ext]',
+                },
             },
         ],
     },
@@ -58,7 +91,10 @@ module.exports = {
                 }
             ],
         }),
-
+        new MiniCssExtractPlugin({
+            filename: '[name].[contenthash].css',
+            chunkFilename: '[id].[contenthash].css',
+        }),
         new CleanWebpackPlugin(),
         new WebpackAssetsManifest({
             output: 'asset-manifest.json',

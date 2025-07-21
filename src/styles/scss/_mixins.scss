@@ -1,3 +1,4 @@
+@use './variables' as var;
 @mixin transition($transition) {
     -moz-transition: $transition;
     -o-transition: $transition;
@@ -56,10 +57,10 @@
     $addSize: $pcSize - $mobSize;
     $addMobSize: $addSize + $addSize * 0.7;
     @media (max-width: 767px) {
-        font-size: calc(#{$mobSize + px} + #{$addMobSize} * ((100vw - 320px) / #{$maxWidth}));
+        font-size: calc(#{$mobSize + px} + #{$addMobSize} * ((100vw - 320px) / #{var.$maxWidth}));
     }
     @media (min-width: 767px) {
-        font-size: calc(#{$mobSize + px} + #{$addSize} * (100vw / #{$maxWidth}));
+        font-size: calc(#{$mobSize + px} + #{$addSize} * (100vw / #{var.$maxWidth}));
     }
 }
 /// Custom scrollbar.

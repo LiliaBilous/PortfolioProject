@@ -1,9 +1,11 @@
+@use './mixins' as mx; 
+@use './variables' as var;
 .about {
     margin-top: 6rem;
-    @media(max-width: $maxTablet) {
+    @media(max-width: var.$maxTablet) {
         margin-top: 4rem;
     }
-    @media(max-width: $mobile) {
+    @media(max-width: var.$mobile) {
         margin-top: 3rem;
     }
     &__container{
@@ -24,7 +26,7 @@
     &__text {
         margin-top: 1rem;
         line-height: 2;
-        @include adaptive-font(20, 18);
+        @include mx.adaptive-font(20, 18);
     }
 }
 

@@ -1,68 +1,84 @@
+@use './mixins' as mx;
+@use './variables' as var;
+
 .home {
-    font-family: $mainFontFamily;
+    font-family: var.$mainFontFamily;
     margin-top: 6rem;
-    @media(max-width: $maxTablet) {
+
+    @media(max-width: var.$maxTablet) {
         margin-top: 4rem;
     }
-    @media(max-width: $mobile) {
+
+    @media(max-width: var.$mobile) {
         margin-top: 2rem;
     }
+
     &__container {
         display: flex;
         flex-direction: row;
         align-items: center;
         justify-content: space-between;
-        @media(max-width: $minTablet){
+
+        @media(max-width: var.$minTablet){
             flex-direction: column;
             align-items: flex-start;
         }
     }
+
     &__content {
         display: flex;
         flex-direction: column;
         align-items: flex-start;
     }
-    &__subtitle {
-        padding: 0.25rem;
-        text-transform: uppercase;
-        @include adaptive-font(38, 24);
-        line-height: 1.5;
-        display: flex;
-        align-items: center;
-        gap: 1rem;
-        &::before{
-            content: "";
-            display: block;
-            height: 1px;
-            width: 1.5rem;
-            background-color: $mainColor;
-        }
-    }
-    &__main-title {
-        @include adaptive-font(100, 42);
-        text-transform: uppercase;
-        font-weight: 400;
-        line-height: 1.25;
-        letter-spacing: .25rem;
-        color: $headersColor;
-    }
+
     &__photo-wrapper {
         width: 100%;
         max-width: 25rem; 
-        @media(max-width: $minTablet) {
+        
+        @media(max-width: var.$minTablet) {
             display: none;
         }    
     }
+
     &__image{
         position: relative;
+        
         & img{
             height: auto;
             width: 100%;
             border-radius: 10%;
         }
     }
+
     &__social{
         padding: 2rem 0 0 0;
+    }
+}
+
+// Переміщуємо властивості перед міксином
+.home__main-title {
+    text-transform: uppercase;
+    font-weight: 400;
+    line-height: 1.25;
+    letter-spacing: .25rem;
+    color: var.$headersColor;
+    @include mx.adaptive-font(100, 42); // Міксин, який може генерувати вкладені правила, йде останнім
+}
+
+.home__subtitle {
+    padding: 0.25rem;
+    text-transform: uppercase;
+    line-height: 1.5;
+    display: flex;
+    align-items: center;
+    gap: 1rem;    
+    @include mx.adaptive-font(38, 24);   
+    &::before{
+        content: "";
+        display: block;
+        height: 1px;
+        width: 1.5rem;
+        background-color: var.$mainColor;
     }
 }
 
@@ -70,48 +86,58 @@
     display: flex;
     gap: 1.875rem;
     align-items: center;
+
     &__button {
         cursor: pointer;
         border: 1px solid transparent;
         padding: 0.5rem;
         border-radius: 0.5rem;
         outline: none;
+        
         &:focus-visible{
             border: 1px solid currentColor;
         }
     }
+
     &__link {
         border: 1px solid transparent;
         padding: 0.5rem;
         border-radius: 0.5rem;
         outline: none;
+        
         &:focus-visible{
             border: 1px solid currentColor;
         }
+
         svg{
             &:hover{
-                fill: $blueAccentColor;
-                @include transition(all 0.4s ease);
+                fill: var.$blueAccentColor;
+                @include mx.transition(all 0.4s ease);
             }
         }
     }
 }
+
 .dark .social__link{
-    color: $whiteColor;
+    color: var.$whiteColor;
 }
+
 .dark .home__subtitle {
     &::before{
-        background-color: $whiteColor;
+        background-color: var.$whiteColor;
     }
 }
+
 .resume {
     display: flex;
     align-items: center;
     padding: 0.5rem;
-    @include transition(all 0.4s ease);
+    @include mx.transition(all 0.4s ease);
+    
     &:hover{
-        color: $blueAccentColor;
+        color: var.$blueAccentColor;
     }
+
     &__icon {
         padding-right: 8px;
         stroke: currentColor;
@@ -121,7 +147,8 @@
 .github,
 .linkedin {
     fill: currentColor;
+    
     &:hover{
-        fill: $blueAccentColor;
+        fill: var.$blueAccentColor;
     }
 }

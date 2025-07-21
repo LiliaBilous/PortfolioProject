@@ -1,9 +1,11 @@
+@use './mixins' as mx; 
+@use './variables' as var;
 .projects {
     margin-top: 6rem;
-    @media(max-width: $maxTablet) {
+    @media(max-width: var.$maxTablet) {
         margin-top: 4rem;
     }
-    @media(max-width: $mobile) {
+    @media(max-width: var.$mobile) {
         margin-top: 3rem;
     }
     &__container {
@@ -20,7 +22,7 @@
         display: flex;
         align-items: center;
         gap: 1rem;
-        @media(max-width: $mobile) {
+        @media(max-width: var.$mobile) {
             gap: 0.5rem;
         }
     }
@@ -34,13 +36,13 @@
     border: 1px solid transparent;
     box-shadow: 0px 5px 15px 5px rgba(0,0,0,0.1);
     border-radius: 1rem;
-    font-family: $sansFontFamily;
+    font-family: var.$sansFontFamily;
     &__image {  
         width: 100%;
         height: 200px;
         border: 1px solid transparent;
         outline: none;
-        @include transition(all 0.4s ease);
+        @include mx.transition(all 0.4s ease);
         img {
             opacity: 0.8;
             object-position: top;
@@ -49,11 +51,12 @@
             height: 100%;
             &:hover,
             &:focus-visible {
-                @include transition(all 0.8s ease);
+                
                 opacity: 1;
                 transform: scale(1.05);
+                @include mx.transition(all 0.8s ease);
             }
-            @media(max-width: $maxMobile){
+            @media(max-width: var.$maxMobile){
                 height: 10rem;
             }
         }
@@ -63,11 +66,11 @@
     }
     &__title {
         font-weight: 500;
-        color: $blueAccentColor;
-        @include adaptive-font(28, 20);
+        color: var.$blueAccentColor;
         text-transform: uppercase;
         padding: 1rem 0 0 0;
         text-align: center;
+        @include mx.adaptive-font(28, 20);
     }
     &__body {
         flex: 1 1 auto;
@@ -78,15 +81,16 @@
     &__description {
         text-align: justify;
         line-height: 1.45;
-        @include adaptive-font(18, 14);
-        padding-top: 1rem
+        padding-top: 1rem;
+        @include mx.adaptive-font(18, 14);
     }
     &__stack {
-        @include adaptive-font(16, 12);
-        color: $blueAccentColor;
+
+        color: var.$blueAccentColor;
         line-height: 1.65;
         padding-top: 1rem;
         text-align: center;
+                @include mx.adaptive-font(16, 12);
     }
     &__footer{
         display: flex;
@@ -117,11 +121,12 @@
     align-items: center;
     gap: 0.25rem;
     text-decoration: underline;
-    color: $headersColor;
-    @include adaptive-font(16, 12);
+    color: var.$headersColor;
+    @include mx.adaptive-font(16, 12);
     &:hover{
-        @include transition(all 0.4s ease);
-        color: $blueAccentColor;
+        color: var.$blueAccentColor;
+        @include mx.transition(all 0.4s ease);
+        
     }
     &-icon{
         svg {
@@ -130,7 +135,7 @@
             height: 1rem;
         }
         &:hover{
-           fill: $blueAccentColor;
+           fill: var.$blueAccentColor;
         }
     }
 }
@@ -145,7 +150,7 @@
     &:focus-visible{
         border: 1px solid currentColor;
     }
-    @include transition(all 0.4s ease);
+    @include mx.transition(all 0.4s ease);
     &:hover{
         background-color: rgba(13, 185, 207, 0.75);
     }
@@ -166,10 +171,10 @@
 }
 
 .dark .project-item__links {
-    color: $mainColor;
+    color: var.$mainColor;
 }
 .dark .project-item__description{
-    color: $whiteColor;
+    color: var.$whiteColor;
 }
 .swiper-slide.project-item {
     display: flex;

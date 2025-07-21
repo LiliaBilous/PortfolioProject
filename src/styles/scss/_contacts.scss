@@ -1,10 +1,12 @@
+@use './mixins' as mx; 
+@use './variables' as var;
 .contacts {
     margin-top: 6rem;
-    font-family: $mainFontFamily;
-    @media(max-width: $maxTablet) {
+    font-family: var.$mainFontFamily;
+    @media(max-width: var.$maxTablet) {
         margin-top: 4rem;
     }
-    @media(max-width: $mobile) {
+    @media(max-width: var.$mobile) {
         margin-top: 3rem;
     }
     &__container {
@@ -21,7 +23,7 @@
     flex-direction: row;
     justify-content: space-between;
     margin: 4rem 0;
-    @media(max-width: $maxMobile) {
+    @media(max-width: var.$maxMobile) {
         flex-direction: column;
         align-items: baseline;
         margin: 2rem 0;
@@ -29,7 +31,7 @@
 }
 .contact-link {
     text-transform: capitalize;
-    @include adaptive-font(36, 24);
+    
     font-weight: 500;
     display: flex;
     flex-direction: row;
@@ -39,11 +41,12 @@
     border: 1px solid transparent;
     border-radius: 0.5rem;
     outline: none;
+    @include mx.adaptive-font(36, 24);
     &:hover,
     &:focus-visible{
         border: 1px solid currentColor;
-        color: $blueAccentColor;
-        @include transition(all 0.4s ease)
+        color: var.$blueAccentColor;
+        @include mx.transition(all 0.4s ease)
     }
     &__icon{
         margin-right: 1rem;

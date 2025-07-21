@@ -1,14 +1,14 @@
-@import "./reset";
-@import "./variables";
-@import "./mixins";
-@import "./header";
-@import "./footer";
-@import "./home";
-@import "./about";
-@import "./projects";
-@import "./tech-stack";
-@import "./contacts";
-@import "./common";
+@use "./reset";
+@use './mixins' as mx; 
+@use './variables' as var;
+@use "./header";
+@use "./footer";
+@use "./home";
+@use "./about";
+@use "./projects";
+@use "./tech-stack";
+@use "./contacts";
+@use "./common";
 
 
 .wrapper {
@@ -22,20 +22,20 @@
 }
 
 body {
-    font-family: $sansFontFamily, sans-serif; 
-    font-size: $fontSize;
+    font-family: var.$sansFontFamily, sans-serif; 
+    font-size: var.$fontSize;
     scroll-behavior: smooth;
-    @include transition(all 0.4s ease);
-    @include scrollbar(hsl(0deg 0% 0% / 15%), hsl(0deg 0% 0% / 25%),  hsl(0deg 0% 0% / 5%),  0.5rem, 0.25rem);
+    @include mx.transition(all 0.4s ease);
+    @include mx.scrollbar(hsl(0deg 0% 0% / 15%), hsl(0deg 0% 0% / 25%),  hsl(0deg 0% 0% / 5%),  0.5rem, 0.25rem);
 }
 
 [data-theme="light"] {
-    color: $mainColor;
-    background-color: $whiteColor;
+    color: var.$mainColor;
+    background-color: var.$whiteColor;
 }
 [data-theme="dark"] {
-    background-color: $darkGreyColor;
-    color: $whiteColor;
+    background-color: var.$darkGreyColor;
+    color: var.$whiteColor;
 }
 [class*="__container"] {
     max-width: 75rem;
